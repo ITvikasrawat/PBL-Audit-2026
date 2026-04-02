@@ -42,16 +42,18 @@
             .blob-2 { bottom: -10%; right: -10%; width: 700px; height: 700px; background: var(--purple); animation-delay: -5s; }
             @keyframes float { 0% { transform: translate(0, 0) scale(1); } 100% { transform: translate(50px, -50px) scale(1.1); } }
 
-            /* Desktop Header */
+            /* Desktop Header - Modernized */
             .d-header {
-                background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);
+                background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(12px);
                 padding: 15px 4%; display: flex; justify-content: space-between; align-items: center;
-                border-bottom: 3px solid var(--primary); position: sticky; top: 0; z-index: 1000;
-                box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+                border-bottom: 1px solid rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.04);
             }
-            .d-header-title { display: flex; align-items: center; gap: 15px; }
-            .d-header-title h1 { font-size: 1.6rem; font-weight: 900; letter-spacing: -0.5px;}
-            .d-header-title span { font-size: 0.9rem; background: var(--primary); color: white; padding: 4px 12px; border-radius: 20px; font-weight: 700;}
+            .d-header-left { display: flex; align-items: center; gap: 20px; }
+            .d-logo { height: 42px; width: auto; object-fit: contain; }
+            .d-header-title { display: flex; align-items: center; gap: 12px; }
+            .d-header-title h1 { font-size: 1.7rem; font-weight: 900; letter-spacing: -0.5px; background: linear-gradient(135deg, var(--dark), var(--primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
+            .d-header-title span { font-size: 0.85rem; background: rgba(79, 70, 229, 0.1); color: var(--primary); border: 1px solid rgba(79, 70, 229, 0.2); padding: 4px 12px; border-radius: 20px; font-weight: 800;}
             .d-auditor-info { text-align: right; display: flex; align-items: center; gap: 15px;}
             .d-auditor-info div { display: flex; flex-direction: column; }
             .d-auditor-info strong { font-size: 1.1rem; color: var(--primary); font-weight: 800;}
@@ -150,13 +152,16 @@
             .desktop-only { display: none !important; }
             body { background-color: var(--ios-bg); color: black; padding-bottom: 90px; font-size: 16px;}
 
-            /* iOS Large Header */
+            /* iOS Large Header - Modernized */
             .m-header {
-                background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-                position: sticky; top: 0; z-index: 100; padding: 25px 20px 15px; border-bottom: 1px solid rgba(0,0,0,0.1);
+                background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+                position: sticky; top: 0; z-index: 100; padding: 20px 20px 15px; border-bottom: 1px solid rgba(0,0,0,0.06);
+                display: flex; justify-content: space-between; align-items: flex-end; box-shadow: 0 4px 20px rgba(0,0,0,0.03);
             }
-            .m-header-small { font-size: 12px; font-weight: 800; color: var(--primary); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 5px;}
-            .m-header-title { font-size: 32px; font-weight: 900; letter-spacing: -1px; color: black;}
+            .m-header-content { display: flex; flex-direction: column; }
+            .m-header-small { font-size: 11px; font-weight: 800; color: var(--primary); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 4px;}
+            .m-header-title { font-size: 28px; font-weight: 900; letter-spacing: -1px; color: black;}
+            .m-logo { height: 36px; width: auto; object-fit: contain; margin-bottom: 2px;}
 
             /* Mobile Tab Content */
             .m-tab-content { display: none; padding: 20px; animation: m-fade 0.3s ease; }
@@ -240,9 +245,12 @@
         <div class="blob blob-1"></div> <div class="blob blob-2"></div> <div class="blob blob-3"></div>
         
         <header class="d-header">
-            <div class="d-header-title">
-                <h1>PBL Internal ISO Audit</h1>
-                <span>2026 Edition</span>
+            <div class="d-header-left">
+                <img src="pbl-logo.png" alt="PBL Logo" class="d-logo" onerror="this.style.display='none'">
+                <div class="d-header-title">
+                    <h1>PBL Internal ISO Audit</h1>
+                    <span>2026 Edition</span>
+                </div>
             </div>
             <div class="d-auditor-info">
                 <div>
@@ -468,8 +476,11 @@
     <div class="mobile-only">
         
         <header class="m-header">
-            <div class="m-header-small">Internal Audit 2026</div>
-            <div class="m-header-title" id="m-page-title">ISMS Core</div>
+            <div class="m-header-content">
+                <div class="m-header-small">Internal Audit 2026</div>
+                <div class="m-header-title" id="m-page-title">ISMS Core</div>
+            </div>
+            <img src="pbl-logo.png" alt="PBL Logo" class="m-logo" onerror="this.style.display='none'">
         </header>
 
         <div style="padding: 10px 15px;">
